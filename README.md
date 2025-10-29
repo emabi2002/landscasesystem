@@ -2,7 +2,11 @@
 
 A comprehensive Legal Case Management System built for the **Department of Lands & Physical Planning (DLPP)**, Papua New Guinea.
 
-![Login Screen](https://img.shields.io/badge/Status-Ready%20for%20Database%20Setup-yellow)
+[![GitHub](https://img.shields.io/badge/GitHub-landscasesystem-blue?logo=github)](https://github.com/emabi2002/landscasesystem)
+![Status](https://img.shields.io/badge/Status-Production%20Ready-green)
+![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)
+![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-green?logo=supabase)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
 
 ## Overview
 
@@ -36,6 +40,48 @@ This system provides complete management of legal cases, including:
 ---
 
 ## 🚀 Quick Start
+
+### Prerequisites
+
+Before you begin, you'll need:
+- **Node.js 18+** or **Bun** installed
+- **Supabase account** (free tier works)
+- **Git** installed
+
+### Installation
+
+#### 1. Clone the Repository
+
+```bash
+git clone https://github.com/emabi2002/landscasesystem.git
+cd landscasesystem
+```
+
+#### 2. Install Dependencies
+
+```bash
+# Using bun (recommended)
+bun install
+
+# OR using npm
+npm install
+```
+
+#### 3. Configure Environment Variables
+
+```bash
+# Copy the example environment file
+cp .env.example .env.local
+
+# Edit .env.local with your Supabase credentials
+# NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
+# NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
+```
+
+To get your Supabase credentials:
+1. Go to [supabase.com](https://supabase.com) and create a project
+2. Go to Settings → API
+3. Copy the "Project URL" and "anon/public" key
 
 ### 1. Database Setup (IMPORTANT - Do This First!)
 
@@ -90,13 +136,23 @@ VALUES ('YOUR_USER_ID', 'admin@lands.gov.pg', 'System Administrator', 'admin');
 
 ### 2. Run the Application
 
-The application is already running! Just:
+Start the development server:
 
-1. Click the **"Sign In"** button on the preview
-2. Enter:
-   - Email: `admin@lands.gov.pg`
-   - Password: `demo123`
-3. You should be logged in and see the dashboard!
+```bash
+# Using bun (recommended)
+bun run dev
+
+# OR using npm
+npm run dev
+```
+
+Then open your browser to [http://localhost:3000](http://localhost:3000)
+
+**Login credentials** (after database setup):
+- Email: `admin@lands.gov.pg`
+- Password: `demo123`
+
+You should be logged in and see the dashboard!
 
 ## 📁 Project Structure
 
@@ -234,6 +290,21 @@ After setting up the database and logging in:
 - Verify you ran the complete `database-schema.sql`
 - Check Supabase dashboard for any error messages
 - Make sure RLS policies are enabled
+
+## 🚀 Deployment
+
+Ready to deploy to production? See the comprehensive [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md).
+
+Quick deployment options:
+- **Netlify** (Recommended) - Follow the guide for step-by-step instructions
+- **Vercel** - Next.js optimized hosting
+- **Custom server** - Self-hosted option
+
+**Important**:
+- Create a separate production Supabase project
+- Never commit `.env.local` to git (it's already in `.gitignore`)
+- Set environment variables in your hosting platform
+- Enable HTTPS/SSL (automatic with Netlify/Vercel)
 
 ## 📞 Support
 
